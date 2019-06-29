@@ -26,3 +26,5 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " NeoMake
 call neomake#configure#automake('w')
+
+set wildignore+=*/target/*
