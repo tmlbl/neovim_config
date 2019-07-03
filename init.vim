@@ -16,7 +16,15 @@ Plug 'kien/ctrlp.vim'
 
 Plug 'neomake/neomake'
 
+Plug 'fatih/vim-go'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
+
 call plug#end()
+
+"set relativenumber
+set colorcolumn=80
+" Make the ColorColumn gray
+highlight ColorColumn ctermbg=8
 
 let g:deoplete#enable_at_startup = 1
 let g:racer_experimental_completer = 1
