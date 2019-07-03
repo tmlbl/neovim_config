@@ -8,6 +8,8 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+Plug 'itchyny/lightline.vim'
+
 Plug 'racer-rust/vim-racer'
 
 Plug 'kien/ctrlp.vim'
