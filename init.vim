@@ -1,16 +1,12 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'itchyny/lightline.vim'
 
+Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
+Plug 'sebastianmarkow/deoplete-rust'
 
 Plug 'kien/ctrlp.vim'
 
@@ -36,5 +32,9 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 " NeoMake
 call neomake#configure#automake('w')
+
+" Deoplete Rust
+let g:deoplete#sources#rust#racer_binary='/home/tim/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='/home/tim/osrc/rust/src'
 
 set wildignore+=*/target/*
