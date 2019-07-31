@@ -53,3 +53,9 @@ augroup filetypes
 
 	autocmd FileType scheme inoremap ( ()<left>
 augroup end
+
+" Rust - ignore target dir
+set wildignore+=*/target/*
+
+" Node/web - ignore node_modules
+set wildignore+=*/node_modules/*
