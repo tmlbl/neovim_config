@@ -4,6 +4,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'itchyny/lightline.vim'
 
+Plug 'hashivim/vim-terraform'
+
 Plug 'rust-lang/rust.vim'
 Plug 'racer-rust/vim-racer'
 Plug 'sebastianmarkow/deoplete-rust'
@@ -37,12 +39,15 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 0
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
+" Terraform format on save
+autocmd BufWritePre *.tf TerraformFmt
+
 " NeoMake
 call neomake#configure#automake('w')
 
 " Deoplete Rust
 let g:deoplete#sources#rust#racer_binary='/home/tim/.cargo/bin/racer'
-let g:deoplete#sources#rust#rust_source_path='/home/tim/osrc/rust/src'
+let g:deoplete#sources#rust#rust_source_path='/opt/src/rust'
 
 set wildignore+=*/target/*
 
