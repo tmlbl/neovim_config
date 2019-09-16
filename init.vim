@@ -17,6 +17,10 @@ Plug 'neomake/neomake'
 Plug 'fatih/vim-go'
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
 
+Plug 'JuliaEditorSupport/julia-vim'
+
+Plug 'dag/vim-fish'
+
 let g:go_def_mode = "gopls"
 
 call plug#end()
@@ -52,10 +56,15 @@ let g:deoplete#sources#rust#rust_source_path='/opt/src/rust'
 set wildignore+=*/target/*
 
 filetype on
+filetype plugin indent on
 
 augroup filetypes
 	autocmd!
 
+	autocmd FileType julia setlocal shiftwidth=4 softtabstop=4 expandtab
+	autocmd FileType fish setlocal shiftwidth=4 softtabstop=4 expandtab
+	autocmd FileType sh setlocal shiftwidth=4 softtabstop=4 expandtab
+	autocmd FileType yaml setlocal shiftwidth=2 softtabstop=2 expandtab
 	autocmd FileType scheme inoremap ( ()<left>
 augroup end
 
